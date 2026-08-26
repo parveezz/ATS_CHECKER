@@ -31,7 +31,7 @@ export default function Terms() {
             Welcome to Resume.ai. By creating an account, accessing our web application, or utilizing any AI resume optimization service provided by Resume.ai, you agree to comply with and be bound by these Terms of Service.
           </p>
           <p>
-            These terms constitute a legally binding agreement between you ("User") and Resume.ai. If you do not agree with any portion of these terms, you must immediately discontinue use of the platform.
+            These terms constitute a legally binding agreement between you (&quot;User&quot;) and Resume.ai. If you do not agree with any portion of these terms, you must immediately discontinue use of the platform.
           </p>
         </section>
 
@@ -85,7 +85,7 @@ export default function Terms() {
             <FiSlash className="text-indigo-600" /> 5. Limitation of Liability & Warranties
           </h2>
           <p>
-            Resume.ai is provided on an "as is" and "as available" basis. While our AI tools optimize resumes for ATS standards, Resume.ai does not guarantee employment offers, job interview callbacks, or specific hiring outcomes.
+            Resume.ai is provided on an &quot;as is&quot; and &quot;as available&quot; basis. While our AI tools optimize resumes for ATS standards, Resume.ai does not guarantee employment offers, job interview callbacks, or specific hiring outcomes.
           </p>
         </section>
 

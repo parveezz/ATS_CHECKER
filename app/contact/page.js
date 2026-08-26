@@ -59,10 +59,10 @@ export default function Contact() {
           {/* Left Info Column */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl font-semibold tracking-wide text-slate-900 leading-tight">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold tracking-wide text-slate-900 leading-tight">
                 How can we help you today?
               </h1>
-              <p className="text-slate-500 text-lg sm:text-xl font-normal tracking-wide leading-relaxed">
+              <p className="text-slate-500 text-xs sm:text-base md:text-xl font-normal tracking-wide leading-relaxed">
                 Our dedicated customer support team is just a message or call away.
               </p>
             </div>

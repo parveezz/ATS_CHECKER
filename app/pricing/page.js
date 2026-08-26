@@ -66,23 +66,23 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-6 max-w-7xl mx-auto flex flex-col items-center">
+    <div className="pt-24 sm:pt-28 pb-16 px-6 max-w-7xl mx-auto flex flex-col items-center">
       {/* Header */}
-      <div className="text-center max-w-3xl mb-12 space-y-4">
-        <h1 className="text-4xl sm:text-6xl font-semibold tracking-tight text-slate-900">
+      <div className="text-center max-w-3xl mb-8 space-y-3">
+        <h1 className="text-h1 font-semibold text-slate-900">
           Transparent Pricing for Growth
         </h1>
-        <p className="text-slate-500 text-lg sm:text-xl font-normal max-w-2xl mx-auto">
+        <p className="text-slate-500 text-body-lg font-normal max-w-2xl mx-auto">
           Enjoy predictable costs, powerful features, and the flexibility to scale at your own pace.
         </p>
       </div>
 
       {/* Animated Monthly / Annual Toggle Switch */}
-      <div className="mb-14 relative inline-flex items-center rounded-full bg-slate-100 p-1.5 border border-slate-200/70">
+      <div className="mb-10 relative inline-flex items-center rounded-full bg-slate-100 p-1.5 border border-slate-200/70">
         <button
           type="button"
           onClick={() => setBillingCycle("monthly")}
-          className={`relative z-10 rounded-full px-7 py-2.5 text-xl font-normal tracking-wide transition-colors ${
+          className={`relative z-10 rounded-full px-5 sm:px-7 py-2 text-button font-medium transition-colors ${
             billingCycle === "monthly" ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
           }`}
         >
@@ -98,7 +98,7 @@ export default function Pricing() {
         <button
           type="button"
           onClick={() => setBillingCycle("annual")}
-          className={`relative z-10 rounded-full px-7 py-2.5 text-xl font-normal tracking-wide transition-colors ${
+          className={`relative z-10 rounded-full px-5 sm:px-7 py-2 text-button font-medium transition-colors ${
             billingCycle === "annual" ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
           }`}
         >
@@ -145,20 +145,20 @@ export default function Pricing() {
                   <div className="p-4">
                     <div className="flex items-center justify-between mb-1">
                       <h3
-                        className={`text-2xl font-normal tracking-wide ${
+                        className={`text-h3 font-bold ${
                           isSelected ? "text-white" : "text-slate-900"
                         }`}
                       >
                         {plan.name}
                       </h3>
                       {plan.badge && (
-                        <span className="rounded-full bg-amber-400/20 px-3.5 py-1 text-xs font-semibold text-amber-400 border border-amber-400/40 shadow-sm">
+                        <span className="rounded-full bg-amber-400/20 px-3.5 py-1 text-caption font-semibold text-amber-400 border border-amber-400/40 shadow-sm">
                           {plan.badge}
                         </span>
                       )}
                     </div>
                     <p
-                      className={`text-base font-normal tracking-wide ${
+                      className={`text-body-sm ${
                         isSelected ? "text-slate-400" : "text-slate-500"
                       }`}
                     >
@@ -172,22 +172,22 @@ export default function Pricing() {
                       {/* Price Display */}
                       <div className="mb-6 h-16 flex flex-col justify-center">
                         {plan.customPrice ? (
-                          <div className="text-4xl font-semibold tracking-tight text-slate-900">
+                          <div className="text-h1 font-bold tracking-tight text-slate-900">
                             {plan.customPrice}
                           </div>
                         ) : (
                           <div>
                             <div className="flex items-baseline gap-1">
-                              <span className="text-4xl sm:text-5xl font-semibold tracking-tight text-slate-900">
+                              <span className="text-h1 font-extrabold tracking-tight text-slate-900">
                                 {billingCycle === "annual"
                                   ? plan.priceAnnual
                                   : plan.priceMonthly}
                               </span>
-                              <span className="text-slate-500 text-lg font-normal tracking-wide">
+                              <span className="text-slate-500 text-body-sm font-normal">
                                 /mo
                               </span>
                             </div>
-                            <p className="text-xs text-slate-400 mt-1 font-normal tracking-wide">
+                            <p className="text-caption text-slate-400 mt-1 font-normal">
                               {billingCycle === "annual"
                                 ? plan.billingTextAnnual
                                 : plan.billingTextMonthly}
@@ -199,11 +199,11 @@ export default function Pricing() {
                       {/* Features List */}
                       <ul className="space-y-3.5 mb-8">
                         {plan.features.map((feature, i) => (
-                          <li key={i} className="flex items-center gap-3 text-base font-normal tracking-wide">
+                          <li key={i} className="flex items-center gap-3 text-body-sm font-normal">
                             <div
                               className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
                                 feature.included
-                                  ? "bg-indigo-600 text-white"
+                                  ? "bg-[#207a75] text-white"
                                   : "bg-slate-100 text-slate-300"
                               }`}
                             >
@@ -224,8 +224,8 @@ export default function Pricing() {
                             <span
                               className={
                                 feature.included
-                                  ? "text-slate-700 font-normal tracking-wide"
-                                  : "text-slate-300 font-normal tracking-wide"
+                                  ? "text-slate-700 font-normal"
+                                  : "text-slate-300 font-normal"
                               }
                             >
                               {feature.text}
@@ -238,10 +238,10 @@ export default function Pricing() {
                     {/* Action Button */}
                     <button
                       type="button"
-                      className={`w-full rounded-2xl py-3.5 text-lg font-normal tracking-wide transition-all ${
+                      className={`w-full rounded-2xl py-3.5 text-button font-bold transition-all cursor-pointer ${
                         isSelected
-                          ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-md shadow-indigo-600/25"
-                          : "bg-white border border-slate-200 text-slate-900 hover:bg-slate-50"
+                          ? "bg-[#207a75] text-white hover:bg-[#165a56] shadow-md shadow-teal-900/20"
+                          : "bg-slate-900 text-white hover:bg-slate-800"
                       }`}
                     >
                       {plan.buttonText}
@@ -255,12 +255,12 @@ export default function Pricing() {
       </div>
 
       {/* FAQ Section */}
-      <div className="mt-28 w-full max-w-4xl">
-        <div className="text-center mb-12 space-y-3">
-          <h2 className="text-3xl sm:text-3xl font-semibold text-slate-900">
+      <div className="mt-20 w-full max-w-4xl">
+        <div className="text-center mb-10 space-y-3">
+          <h2 className="text-h2 font-semibold text-slate-900">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-500 text-lg">
+          <p className="text-slate-500 text-body-lg">
             Everything you need to know about our plans, billing, and AI resume builder.
           </p>
         </div>
@@ -302,13 +302,13 @@ export default function Pricing() {
                 <button
                   type="button"
                   onClick={() => setOpenFaq(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left font-semibold text-slate-900 text-lg hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left font-semibold text-slate-900 text-h4 hover:bg-slate-50 transition-colors"
                 >
                   <span>{faq.question}</span>
                   <motion.span
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
-                    className="ml-4 shrink-0 text-indigo-600"
+                    className="ml-4 shrink-0 text-[#207a75]"
                   >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -324,7 +324,7 @@ export default function Pricing() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.25, ease: "easeInOut" }}
                     >
-                      <div className="px-6 pb-6 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
+                      <div className="px-6 pb-6 text-slate-600 text-body-reg border-t border-slate-100 pt-4">
                         {faq.answer}
                       </div>
                     </motion.div>

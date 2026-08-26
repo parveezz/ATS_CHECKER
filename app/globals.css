@@ -1,8 +1,68 @@
 @import "tailwindcss";
 
+/* -------------------------------------------------------------
+ * Global Typography System
+ * Rule: 50% reduction visual scaling direction for Headings
+ * Component-aware minimum sizes for Functional Text (body, buttons, inputs, labels)
+ * Desktop (>=1024px) | Tablet (768px-1023px) | Mobile (<768px)
+ * ------------------------------------------------------------- */
+
 :root {
+  /* Mobile (<768px): 50% scaling direction for headings; functional text protected for UX */
+  --font-display: 1.5rem;       /* 24px */
+  --font-h1: 1.125rem;         /* 18px */
+  --font-h2: 1rem;             /* 16px */
+  --font-h3: 0.875rem;         /* 14px */
+  --font-h4: 0.75rem;          /* 12px */
+  --font-body-lg: 0.875rem;    /* 14px functional component floor */
+  --font-body-reg: 0.875rem;   /* 14px functional component floor */
+  --font-body-sm: 0.75rem;     /* 12px functional component floor */
+  --font-caption: 0.6875rem;   /* 11px caption floor */
+  --font-nav: 0.875rem;        /* 14px navigation floor */
+  --font-button: 0.875rem;     /* 14px button floor */
+  --font-input: 1rem;          /* 16px input floor (prevents mobile Safari auto-zoom) */
+  --font-label: 0.8125rem;     /* 13px label floor */
+
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* Tablet (768px - 1023px): 50% scaling step for headings */
+    --font-display: 2rem;       /* 32px (50% of 64px) */
+    --font-h1: 1.5rem;         /* 24px (50% of 48px) */
+    --font-h2: 1.25rem;        /* 20px (50% of 40px) */
+    --font-h3: 1rem;           /* 16px (50% of 32px) */
+    --font-h4: 0.875rem;       /* 14px */
+    --font-body-lg: 1rem;      /* 16px */
+    --font-body-reg: 0.9375rem;/* 15px */
+    --font-body-sm: 0.8125rem; /* 13px */
+    --font-caption: 0.75rem;   /* 12px */
+    --font-nav: 0.9375rem;     /* 15px */
+    --font-button: 0.9375rem;  /* 15px */
+    --font-input: 1rem;        /* 16px */
+    --font-label: 0.875rem;    /* 14px */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    /* Desktop (>=1024px): 100% Base Scale */
+    --font-display: 4rem;      /* 64px */
+    --font-h1: 3rem;          /* 48px */
+    --font-h2: 2.5rem;        /* 40px */
+    --font-h3: 2rem;          /* 32px */
+    --font-h4: 1.5rem;        /* 24px */
+    --font-body-lg: 1.125rem; /* 18px */
+    --font-body-reg: 1rem;    /* 16px */
+    --font-body-sm: 0.875rem; /* 14px */
+    --font-caption: 0.75rem;  /* 12px */
+    --font-nav: 1rem;         /* 16px */
+    --font-button: 1rem;      /* 16px */
+    --font-input: 1rem;       /* 16px */
+    --font-label: 0.875rem;   /* 14px */
+  }
 }
 
 @theme inline {
@@ -25,16 +85,73 @@ body {
 }
 
 @layer utilities {
-  .text-primary {
-    font-size: 1.25rem; /* text-xl */
-    font-weight: 400;   /* font-normal */
-    letter-spacing: 0.025em; /* tracking-wide */
+  .text-display {
+    font-size: var(--font-display);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
   }
 
-  .text-secondary {
-    font-size: 1rem;    /* text-base */
-    font-weight: 400;   /* font-normal */
-    letter-spacing: 0.025em; /* tracking-wide */
-    color: #64748b;     /* text-slate-500 */
+  .text-h1 {
+    font-size: var(--font-h1);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+
+  .text-h2 {
+    font-size: var(--font-h2);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .text-h3 {
+    font-size: var(--font-h3);
+    line-height: 1.25;
+  }
+
+  .text-h4 {
+    font-size: var(--font-h4);
+    line-height: 1.3;
+  }
+
+  .text-body-lg {
+    font-size: var(--font-body-lg);
+    line-height: 1.6;
+  }
+
+  .text-body-reg {
+    font-size: var(--font-body-reg);
+    line-height: 1.5;
+  }
+
+  .text-body-sm {
+    font-size: var(--font-body-sm);
+    line-height: 1.45;
+  }
+
+  .text-caption {
+    font-size: var(--font-caption);
+    line-height: 1.4;
+  }
+
+  .text-nav {
+    font-size: var(--font-nav);
+    line-height: 1.3;
+  }
+
+  .text-button {
+    font-size: var(--font-button);
+    line-height: 1.3;
+    letter-spacing: 0.025em;
+  }
+
+  .text-input {
+    font-size: var(--font-input);
+    line-height: 1.4;
+  }
+
+  .text-label {
+    font-size: var(--font-label);
+    line-height: 1.4;
+    font-weight: 500;
   }
 }

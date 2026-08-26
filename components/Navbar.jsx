@@ -10,6 +10,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "Dashboard", href: "/dashboard" },
     { name: "Pricing", href: "/pricing" },
     { name: "Templates", href: "/templates" },
     { name: "About Us", href: "/about" },
@@ -52,17 +53,17 @@ export default function Navbar() {
 
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-4">
+          <nav className="hidden md:flex items-center gap-2">
             {navItems.map((item) => {
               const active = isActive(item.href);
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`px-5 py-2.5 rounded-xl text-lg tracking-wide transition-all ${
+                  className={`px-4 py-2 rounded-xl text-nav transition-all ${
                     active
-                      ? "bg-indigo-600 text-white font-semibold shadow-md"
-                      : "text-slate-700 font-medium hover:bg-indigo-100 hover:text-indigo-700"
+                      ? "bg-[#207a75] text-white font-semibold shadow-md"
+                      : "text-slate-700 font-medium hover:bg-teal-50 hover:text-[#207a75]"
                   }`}
                 >
                   {item.name}
@@ -73,26 +74,20 @@ export default function Navbar() {
 
 
           {/* Desktop Auth */}
-          <div className="hidden md:flex items-center gap-6">
-
+          <div className="hidden md:flex items-center gap-4">
             <Link
               href="/auth/login"
-              className={`rounded-full border px-8 py-3 text-lg tracking-wide transition-all ${
-                pathname === "/auth/login"
-                  ? "border-indigo-600 bg-indigo-600 text-white font-semibold shadow-md"
-                  : "border-slate-300 text-slate-700 font-normal hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700"
-              }`}
+              className="rounded-full border border-slate-300 px-6 py-2 text-button font-medium text-slate-700 hover:bg-slate-50 transition-all"
             >
-              Login
+              Sign In
             </Link>
 
             <Link
               href="/auth/register"
-              className="rounded-full bg-indigo-600 px-8 py-3 text-lg font-medium tracking-wide text-white shadow-sm transition-all hover:bg-indigo-700 hover:shadow-md"
+              className="rounded-full bg-[#207a75] hover:bg-[#165a56] px-6 py-2 text-button font-bold text-white shadow-md transition-all"
             >
-              Register
+              Get Started
             </Link>
-
           </div>
 
 

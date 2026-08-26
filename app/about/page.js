@@ -9,17 +9,17 @@ export default function About() {
       <div className="px-6 lg:px-12 max-w-7xl mx-auto space-y-20">
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/50 px-4 py-1.5 text-sm font-normal tracking-wide text-indigo-700 shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/50 px-4 py-1.5 text-xs sm:text-sm font-normal tracking-wide text-indigo-700 shadow-sm">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-white text-xs">
               <FiCpu />
             </span>
             Powered by Gemini AI
           </span>
-          <h1 className="text-4xl sm:text-6xl font-semibold tracking-wide text-slate-900 leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl font-semibold tracking-wide text-slate-900 leading-tight">
             Next-Gen ATS Resume Analysis with <span className="text-indigo-600 font-normal">Gemini AI</span>
           </h1>
-          <p className="text-slate-500 text-lg sm:text-xl font-normal tracking-wide max-w-2xl mx-auto leading-relaxed">
-            Resume.ai leverages Google DeepMind's advanced Gemini AI models to analyze, score, and optimize your resume against real-world job descriptions and ATS algorithms.
+          <p className="text-slate-500 text-xs sm:text-base md:text-xl font-normal tracking-wide max-w-2xl mx-auto leading-relaxed">
+            Resume.ai leverages Google DeepMind&apos;s advanced Gemini AI models to analyze, score, and optimize your resume against real-world job descriptions and ATS algorithms.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function About() {
                   Contextual Content Optimization
                 </h3>
                 <p className="text-slate-500 text-sm font-normal tracking-wide leading-relaxed">
-                  Using Gemini AI's advanced semantic understanding, our builder rewrites passive bullet points into action-oriented statements backed by quantifiable metrics and industry achievements.
+                  Using Gemini AI&apos;s advanced semantic understanding, our builder rewrites passive bullet points into action-oriented statements backed by quantifiable metrics and industry achievements.
                 </p>
               </div>
             </div>

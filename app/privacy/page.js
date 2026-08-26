@@ -4,34 +4,33 @@ import { FiShield, FiLock, FiEye, FiCheckSquare, FiTrash2, FiHelpCircle } from "
 
 export default function Privacy() {
   return (
-    <div className="pt-32 pb-20 px-6 lg:px-12 max-w-5xl mx-auto space-y-12">
+    <div className="pt-24 sm:pt-28 pb-16 px-6 lg:px-12 max-w-5xl mx-auto space-y-10">
       {/* Header */}
-      <div className="space-y-4">
-        <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-1.5 text-sm font-normal tracking-wide text-slate-800 shadow-sm">
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-white text-xs">
+      <div className="space-y-3">
+        <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-1.5 text-caption font-medium tracking-wide text-slate-800 shadow-sm">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#207a75] text-white text-xs">
             <FiShield />
           </span>
           Privacy Policy
         </span>
-        <h1 className="text-4xl sm:text-5xl font-semibold tracking-wide text-slate-900">
+        <h1 className="text-h1 font-semibold text-slate-900">
           Privacy Policy
         </h1>
-        <p className="text-slate-500 text-base font-normal tracking-wide">
+        <p className="text-slate-500 text-caption font-normal">
           Last updated: August 26, 2026 · Effective Date: August 26, 2026
         </p>
       </div>
 
       {/* Content Section */}
-      <div className="prose max-w-none text-slate-600 space-y-10 font-normal tracking-wide leading-relaxed">
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-slate-900 flex items-center gap-2.5">
-            <FiEye className="text-indigo-600" /> 1. Information We Collect
+      <div className="prose max-w-none text-slate-600 space-y-8 font-normal leading-relaxed">
+        <section className="space-y-3">
+          <h2 className="text-h2 font-semibold text-slate-900 flex items-center gap-2.5">
+            <FiEye className="text-[#207a75]" /> 1. Information We Collect
           </h2>
-          <p>
-            At Resume.ai, we take your privacy seriously. We collect personal information necessary to deliver and personalize our AI resume optimization services.
+          <p className="text-body-reg">
+            At ResumAI, we take your privacy seriously. We collect personal information necessary to deliver and personalize our AI resume optimization services.
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-slate-600">
-             animate-pulse
+          <ul className="list-disc pl-6 space-y-2 text-body-reg text-slate-600">
             <li><strong>Account Data:</strong> Name, work email address, and authentication credentials upon account creation.</li>
             <li><strong>Resume Content:</strong> Employment history, educational background, skills, certifications, and contact details provided in your resume drafts.</li>
             <li><strong>Technical Diagnostics:</strong> IP addresses, browser types, device information, and usage analytics to ensure system stability and performance.</li>
@@ -39,14 +38,14 @@ export default function Privacy() {
           </ul>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-slate-900 flex items-center gap-2.5">
-            <FiCheckSquare className="text-indigo-600" /> 2. How We Use Your Data
+        <section className="space-y-3">
+          <h2 className="text-h2 font-semibold text-slate-900 flex items-center gap-2.5">
+            <FiCheckSquare className="text-[#207a75]" /> 2. How We Use Your Data
           </h2>
-          <p>
+          <p className="text-body-reg">
             Your information is used strictly to power core resume building and optimization features:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-slate-600">
+          <ul className="list-disc pl-6 space-y-2 text-body-reg text-slate-600">
             <li>Generating AI bullet points, tailored summary suggestions, and ATS keyword matching scores.</li>
             <li>Processing high-resolution exports into PDF, Word (.docx), and plain text formats.</li>
             <li>Communicating security alerts, system maintenance updates, and account notices.</li>
@@ -54,44 +53,30 @@ export default function Privacy() {
           </ul>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-slate-900 flex items-center gap-2.5">
-            <FiLock className="text-indigo-600" /> 3. Data Protection & Encryption
+        <section className="space-y-3">
+          <h2 className="text-h2 font-semibold text-slate-900 flex items-center gap-2.5">
+            <FiLock className="text-[#207a75]" /> 3. Data Protection & Encryption
           </h2>
-          <p>
-            We implement comprehensive technical and organizational safeguards designed to prevent unauthorized access, disclosure, or alteration of your personal data:
+          <p className="text-body-reg">
+            All user data is encrypted in transit via TLS 1.3 and at rest using AES-256 standards. We store data in secure cloud infrastructure compliant with SOC2 and ISO-27001 standards.
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-slate-600">
-            <li>All communication between your device and our servers is encrypted using Industry standard TLS 1.3 encryption.</li>
-            <li>Data at rest is stored in secure database clusters with multi-region backup protection.</li>
-            <li>Strict role-based access control policies ensure that only authorized system operations access database environments.</li>
-          </ul>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-slate-900 flex items-center gap-2.5">
-            <FiTrash2 className="text-indigo-600" /> 4. Data Ownership & Deletion Rights
+        <section className="space-y-3">
+          <h2 className="text-h2 font-semibold text-slate-900 flex items-center gap-2.5">
+            <FiTrash2 className="text-[#207a75]" /> 4. Your Rights & Data Control
           </h2>
-          <p>
-            You retain 100% ownership over your resume content and personal information at all times.
+          <p className="text-body-reg">
+            You maintain full ownership of your data. You may export, modify, or permanently delete your account and all associated resume drafts at any time from your account settings.
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-slate-600">
-            <li><strong>Right to Export:</strong> You can export your stored resumes in editable or printable formats at any time.</li>
-            <li><strong>Right to Erasure:</strong> You can request permanent account and document deletion directly from your account profile or by emailing privacy@resume.ai.</li>
-            <li><strong>Data Retention:</strong> Upon account closure, all associated data is permanently erased from active databases within 30 days.</li>
-          </ul>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-slate-900 flex items-center gap-2.5">
-            <FiHelpCircle className="text-indigo-600" /> 5. Contact Privacy Team
+        <section className="space-y-3">
+          <h2 className="text-h2 font-semibold text-slate-900 flex items-center gap-2.5">
+            <FiHelpCircle className="text-[#207a75]" /> 5. Contact Privacy Team
           </h2>
-          <p>
-            If you have any questions or concerns regarding this Privacy Policy or your personal data rights, please reach out to our Data Protection Officer at:
-          </p>
-          <p className="bg-slate-50 border border-slate-200 p-4 rounded-xl text-slate-800 font-normal">
-            Email: <span className="text-indigo-600">privacy@resume.ai</span><br />
-            Address: Silicon Valley Headquarters, CA 94043, United States
+          <p className="text-body-reg">
+            For questions or requests regarding your personal data, contact our Privacy Officer at <a href="mailto:privacy@resume.ai" className="text-[#207a75] font-semibold hover:underline">privacy@resume.ai</a>.
           </p>
         </section>
       </div>

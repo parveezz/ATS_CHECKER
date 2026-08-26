@@ -18,7 +18,7 @@ export default function Templates() {
       rating: "4.9",
       downloads: "12.4k",
       description: "Sleek two-column layout optimized for technology, software engineering, and product roles.",
-      color: "from-indigo-500 to-sky-600",
+      color: "from-[#207a75] to-teal-800",
     },
     {
       id: 2,
@@ -38,37 +38,37 @@ export default function Templates() {
       rating: "4.8",
       downloads: "8.9k",
       description: "Vibrant accent headers designed for UI/UX designers, marketers, and creative directors.",
-      color: "from-purple-500 to-indigo-600",
+      color: "from-teal-600 to-[#165a56]",
     },
     {
       id: 4,
       name: "Minimalist Clean",
       category: "Minimalist",
-      badge: "ATS Rank 98%",
+      badge: "Fast Scan",
       rating: "4.9",
       downloads: "15.3k",
-      description: "Ultra-clean typography layout with high whitespace readability for entry to senior roles.",
-      color: "from-emerald-600 to-teal-700",
+      description: "Ultra-clean spacing and crisp typography engineered for seamless parsing by all major ATS platforms.",
+      color: "from-slate-800 to-emerald-950",
     },
     {
       id: 5,
       name: "Tech Specialist",
       category: "Modern",
-      badge: "AI Tuned",
-      rating: "4.9",
-      downloads: "19.7k",
-      description: "Highlighted skill chips and project section layout tailored for developers and data scientists.",
-      color: "from-blue-600 to-cyan-600",
+      badge: "Top Rated",
+      rating: "5.0",
+      downloads: "31.2k",
+      description: "Dedicated skills grid and project accomplishment metrics built specifically for tech leads.",
+      color: "from-[#1b5e59] to-cyan-900",
     },
     {
       id: 6,
-      name: "Leadership Pro",
+      name: "Executive Leader",
       category: "Professional",
-      badge: "Top Rated",
-      rating: "5.0",
-      downloads: "22.5k",
-      description: "Strong executive summary header and metric achievement highlights for management roles.",
-      color: "from-slate-800 to-indigo-950",
+      badge: "Executive",
+      rating: "4.9",
+      downloads: "19.7k",
+      description: "Sophisticated executive summary layout designed for VP, C-Suite, and Senior Director candidates.",
+      color: "from-slate-900 to-teal-900",
     },
   ];
 
@@ -77,33 +77,33 @@ export default function Templates() {
     : templates.filter((t) => t.category === selectedCategory);
 
   return (
-    <div className="pt-32 pb-20 px-6 lg:px-12 max-w-7xl mx-auto space-y-16">
+    <div className="pt-24 sm:pt-28 pb-16 px-6 lg:px-12 max-w-7xl mx-auto space-y-12">
       
       {/* Hero Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-1.5 text-sm font-normal tracking-wide text-slate-800 shadow-sm">
-          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-600 text-white text-xs">
+      <div className="text-center max-w-3xl mx-auto space-y-3">
+        <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-1.5 text-caption font-medium tracking-wide text-slate-800 shadow-sm">
+          <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#207a75] text-white text-xs">
             <FiLayout />
           </span>
           Resume Templates
         </span>
-        <h1 className="text-4xl sm:text-6xl font-semibold tracking-wide text-slate-900 leading-tight">
-          ATS-Optimized <span className="text-indigo-600 font-normal">Resume Templates</span>
+        <h1 className="text-h1 font-semibold text-slate-900">
+          ATS-Optimized <span className="text-[#207a75] font-normal">Resume Templates</span>
         </h1>
-        <p className="text-slate-500 text-lg sm:text-xl font-normal tracking-wide max-w-2xl mx-auto leading-relaxed">
+        <p className="text-slate-500 text-body-lg font-normal max-w-2xl mx-auto">
           Select from recruiter-approved, ATS-friendly templates engineered to get your resume noticed by top employers.
         </p>
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`rounded-full px-6 py-2.5 text-base font-normal tracking-wide transition-all ${
+            className={`rounded-full px-5 py-2 text-button font-medium transition-all cursor-pointer ${
               selectedCategory === cat
-                ? "bg-slate-900 text-white shadow-md"
+                ? "bg-[#207a75] text-white shadow-md font-semibold"
                 : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50"
             }`}
           >
@@ -117,54 +117,47 @@ export default function Templates() {
         {filteredTemplates.map((template) => (
           <div
             key={template.id}
-            className="rounded-3xl border border-slate-200/80 bg-white overflow-hidden shadow-none hover:shadow-lg transition-all flex flex-col justify-between group"
+            className="rounded-3xl border border-slate-200/80 bg-white overflow-hidden shadow-xs hover:shadow-xl transition-all flex flex-col justify-between group"
           >
             {/* Mockup Preview Area */}
-            <div className={`h-52 w-full bg-gradient-to-br ${template.color} p-6 flex flex-col justify-between text-white relative`}>
+            <div className={`h-48 w-full bg-gradient-to-br ${template.color} p-6 flex flex-col justify-between text-white relative`}>
               <div className="flex items-center justify-between z-10">
-                <span className="rounded-full bg-white/20 backdrop-blur-md px-3 py-1 text-xs font-semibold tracking-wide text-white border border-white/30">
+                <span className="rounded-full bg-white/20 backdrop-blur-md px-3 py-1 text-caption font-semibold text-white border border-white/30">
                   {template.badge}
                 </span>
-                <span className="flex items-center gap-1 text-xs font-normal tracking-wide bg-black/20 backdrop-blur-md px-2.5 py-1 rounded-full">
+                <span className="flex items-center gap-1 text-caption bg-black/20 backdrop-blur-md px-2.5 py-1 rounded-full">
                   <FiStar className="text-amber-300 fill-amber-300 w-3.5 h-3.5" />
                   {template.rating}
                 </span>
               </div>
 
-              {/* Minimal Resume Sheet Mockup Graphic */}
-              <div className="bg-white/95 rounded-xl p-4 text-slate-800 space-y-2 shadow-xl border border-white/50 group-hover:scale-[1.02] transition-transform">
-                <div className="h-3 w-28 bg-slate-800 rounded" />
-                <div className="h-2 w-44 bg-slate-300 rounded" />
-                <div className="border-t border-slate-200 my-1 pt-1.5 space-y-1">
-                  <div className="h-2 w-full bg-slate-200 rounded" />
-                  <div className="h-2 w-4/5 bg-slate-200 rounded" />
-                </div>
+              <div className="z-10 space-y-1">
+                <span className="text-caption text-teal-200 uppercase tracking-widest font-semibold block">
+                  {template.category}
+                </span>
+                <h3 className="text-h3 font-bold text-white tracking-wide">
+                  {template.name}
+                </h3>
               </div>
             </div>
 
-            {/* Template Info Content */}
+            {/* Content Details */}
             <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-semibold tracking-wide text-slate-900">
-                    {template.name}
-                  </h3>
-                  <span className="text-xs font-normal tracking-wide text-slate-400 flex items-center gap-1">
-                    <FiDownload className="w-3.5 h-3.5" />
-                    {template.downloads}
-                  </span>
-                </div>
-                <p className="text-slate-500 text-sm font-normal tracking-wide leading-relaxed">
-                  {template.description}
-                </p>
-              </div>
+              <p className="text-body-sm text-slate-600">
+                {template.description}
+              </p>
 
-              <div className="pt-2">
+              <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                <span className="text-caption text-slate-400 flex items-center gap-1">
+                  <FiDownload className="w-3.5 h-3.5 text-[#207a75]" />
+                  {template.downloads} downloads
+                </span>
+
                 <Link
-                  href="/auth/login"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 py-3 text-base font-normal tracking-wide text-white shadow-md hover:bg-indigo-700 transition-all"
+                  href="/auth/register"
+                  className="rounded-full bg-[#207a75] hover:bg-[#165a56] text-white px-5 py-2 text-button font-bold shadow-sm transition-all group-hover:scale-105"
                 >
-                  Use This Template
+                  Use Template
                 </Link>
               </div>
             </div>
@@ -172,7 +165,6 @@ export default function Templates() {
         ))}
       </div>
 
-      {/* Templates Grid End */}
     </div>
   );
 }
